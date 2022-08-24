@@ -4,15 +4,15 @@
 &nbsp; 
 &nbsp;  
 #### <a href="#id_1">Part One: Based on FCN models</a>
-Date  |  Data  | Module | Joural | Title|
-:---- |-------:|-------:|-------:|------:
-
+Date  |  Data  | Module | Title|
+:---- |-------:|-------:|------:
+2018  |        |        | Accurate liver vessel segmentation via active contour model with dense vessel candidates |
 
 &nbsp; 
 &nbsp;  
 #### <a href="#id_1">Part One: Based on U-Net models</a>
-Date  |  Data  | Module | Joural | Title|
-:---- |-------:|-------:|-------:|------:
+Date  |  Data  | Module | Title|
+:---- |-------:|-------:|------:
 2022  | HNCTA,UECT | 
 
 
