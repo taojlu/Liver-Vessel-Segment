@@ -84,3 +84,20 @@ Date  |  Data  | Module | Title|
 Date  |  Organ  | Module | Joural | Title|
 :---- |-------:|-------:|-------:|------:
 2022  | head-neck | dual-task | Computer Methods and Programs in Biomedicine | Simultaneous vessel segmentation and unenhanced prediction using self-supervised dual-task learning in 3D CTA (SVSUP) |
+
+
+
+# Liver Vessel Segment Data Preprocessing
+[1] Robust liver vessel extraction using 3D U-Net with variant dice loss function  
+Preprocessing consists of 3 steps: (1) CT values are limited to [0400]
+HU to focus on the intensity range of the liver. (2) CT images and annotated
+images are cropped to the liver area based on the pre-segmented
+liver mask, and adjusted to the size of 288×288×96. For local
+datasets, the liver mask is obtained by our previous liver segmentation
+method [27]. (3) Images are normalized to zero mean and unit variance.
+Since most liver vessels are quite small, we trained images with
+their original resolution if it was in a reasonable range to prevent artifact
+errors caused by resampling. For data with slice thickness smaller
+than 0.8mm or larger than 2.5 mm, we used a coordinate transform and
+cubic spline interpolation to transfer the data into a slice thickness of
+1.6 mm.
