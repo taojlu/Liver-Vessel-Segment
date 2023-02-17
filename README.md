@@ -88,7 +88,7 @@ Date  |  Organ  | Module | Joural | Title|
 
 
 # Liver Vessel Segment Data Preprocessing
-[1] Robust liver vessel extraction using 3D U-Net with variant dice loss function  
+[1] Robust liver vessel extraction using 3D U-Net with variant dice loss function(Computers in Biology and Medicine, 2018)    
 Preprocessing consists of 3 steps: (1) CT values are limited to [0400]
 HU to focus on the intensity range of the liver. (2) CT images and annotated
 images are cropped to the liver area based on the pre-segmented
@@ -101,3 +101,37 @@ errors caused by resampling. For data with slice thickness smaller
 than 0.8mm or larger than 2.5 mm, we used a coordinate transform and
 cubic spline interpolation to transfer the data into a slice thickness of
 1.6 mm.
+
+[2] LIVER VESSELS SEGMENTATION BASED ON 3D RESIDUAL U-NET (2019)  
+To improve the segmentation performance and effectively
+prevent overfitting during training, we have applied many image
+amplification methods to increase our training set, which
+contains elastic deformation and a combined transformation,
+where the combined transformation includes translation, rotation
+and gray value transformation. In our experiment, the
+rotation angle is randomly selected from -20 to +20, the
+translation is between -52 and +52 pixels, and gray value
+transformation is achieved by multiply the gray value with
+a random number ranging from 0.8 to 1.
+
+[3]Attention-Guided Deep Neural Network With Multi-Scale Feature Fusion for Liver Vessel Segmentation (IEEE Journal of and Health Informatics, 2021)  
+CT images and annotated images are cropped to the liver area based on the pre-segmented liver mask, then werandomly crop patches of size
+256 × 256 × 64 from the liver area for training. To eliminate the overfitting problem, we also adopt data augmentation to enrich the training data. All computations were performed using 8 NVIDIA Titan RTX GPUs with 24 GB memory. The initial learning rate is set to 10−4 and divided by 10 every 5000 epoch.
+(1)The range of pixel spacing is 0.55 to 0.80 mm.
+
+[4] Liver vessel segmentation based on densely connected three-dimensional fully convolutional neural network
+To focus on the liver intensity range, the CT value range is limited to [0,400] HU. Assuming that there are n voxels in the liver area, x is the pixel value of the i-th point in the liver area, and the formula is as follows:
+
+[5]TRAINING LIVER VESSEL SEGMENTATION DEEP NEURAL NETWORKS ON NOISY LABELS FROM CONTRAST CT IMAGING (ISBI, 2020)
+Then we truncate the intensity of all volumes to the range of [-100, 250] HU to remove the irrelevant details and normalized them by subtracting the mean.
+
+[6] HPM-Net: Hierarchical progressive multiscale network for liver vessel segmentation in CT images (Computer Methods and Programs in Biomedicine, 2022)  
+The purpose of data preprocessing is to improve the contrast of vascular pixels and facilitate network feature extraction. The pre- treatment steps are as follows:
+(1)
+The CT value of images is limited to [-10 0,30 0] HU, which filters out other organs to better focus on the liver regions;
+(2)
+To avoid the influence of the tissue around the liver and reduce the amount of computation, the CT images and annotated im- ages were cropped to the liver region based on the liver mask obtained by the liver segmentation method, and the size was adjusted to 288 ×288 ×96. There are some data with Z-axis less than 96, and we intercepted the size of 96 on the original data with the liver as the center.
+(3)
+All images are standardized by removing the mean and divid- ing them by the standard deviation, and finally standardized to make all data mapped to the range of [0,1];
+(4)
+Random scaling, rotation, and mirroring operations are used to expand data. In our experiment, the scaling operation first randomly crops to 192 ∗192 ∗96 size, and then scales down to 96 ∗96 ∗96 size using the nearest neighbor interpolation method. Rotation operation is randomly rotated to 90 ◦, 180 ◦and 270 ◦. The mirroring transformation is mainly horizontal, vertical and diagonal mirroring.
